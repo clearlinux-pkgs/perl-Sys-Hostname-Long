@@ -64,8 +64,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Sys/Hostname/Long.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Sys/Hostname/testall.pl
+/usr/lib/perl5/vendor_perl/5.28.0/Sys/Hostname/Long.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Sys/Hostname/testall.pl
 
 %files dev
 %defattr(-,root,root,-)
