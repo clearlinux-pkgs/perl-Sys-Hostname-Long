@@ -4,12 +4,13 @@
 #
 Name     : perl-Sys-Hostname-Long
 Version  : 1.5
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz
 Summary  : 'Try every conceivable way to get full hostname'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Sys-Hostname-Long-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,19 +23,30 @@ To install this module type the following:
 Summary: dev components for the perl-Sys-Hostname-Long package.
 Group: Development
 Provides: perl-Sys-Hostname-Long-devel = %{version}-%{release}
+Requires: perl-Sys-Hostname-Long = %{version}-%{release}
 
 %description dev
 dev components for the perl-Sys-Hostname-Long package.
 
 
+%package perl
+Summary: perl components for the perl-Sys-Hostname-Long package.
+Group: Default
+Requires: perl-Sys-Hostname-Long = %{version}-%{release}
+
+%description perl
+perl components for the perl-Sys-Hostname-Long package.
+
+
 %prep
 %setup -q -n Sys-Hostname-Long-1.5
+cd %{_builddir}/Sys-Hostname-Long-1.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -44,7 +56,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -64,9 +76,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Sys/Hostname/Long.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Sys/Hostname/testall.pl
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Sys::Hostname::Long.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Sys/Hostname/Long.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Sys/Hostname/testall.pl
