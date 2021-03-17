@@ -4,7 +4,7 @@
 #
 Name     : perl-Sys-Hostname-Long
 Version  : 1.5
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz
 Summary  : 'Try every conceivable way to get full hostname'
@@ -83,5 +83,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Sys/Hostname/Long.pm
-/usr/lib/perl5/vendor_perl/5.30.3/Sys/Hostname/testall.pl
+/usr/lib/perl5/vendor_perl/5.32.1/Sys/Hostname/Long.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Sys/Hostname/testall.pl
