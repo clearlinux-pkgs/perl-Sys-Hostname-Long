@@ -4,7 +4,7 @@
 #
 Name     : perl-Sys-Hostname-Long
 Version  : 1.5
-Release  : 25
+Release  : 26
 URL      : https://cpan.metacpan.org/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/S/SC/SCOTT/Sys-Hostname-Long-1.5.tar.gz
 Summary  : 'Try every conceivable way to get full hostname'
